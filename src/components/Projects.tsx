@@ -56,7 +56,7 @@ const Projects: React.FC = () => {
         </div>
         {hasMore && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-            <button className="show-more-btn" onClick={() => {}}>
+            <button className="show-more-btn" onClick={() => setShowAll(true)}>
               Show more
             </button>
           </div>
