@@ -7,7 +7,7 @@ export const content = {
       "Cloud Automation Enthusiast"
     ],
     description:
-      "TEST Creative developer combining frontend expertise with 3D graphics to build unique digital solutions. Passionate about creating immersive experiences and pushing the boundaries of modern technologies.",
+      "Creative developer combining frontend expertise with 3D graphics to build unique digital solutions. Passionate about creating immersive experiences and pushing the boundaries of modern technologies.",
   },
   about: {
     title: "About Me",
