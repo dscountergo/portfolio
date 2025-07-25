@@ -1,5 +1,6 @@
 import React from 'react';
 import { content } from '../data/content';
+import ImageGallery from './ImageGallery';
 
 const MAX_VISIBLE = 4;
 
@@ -15,11 +16,10 @@ const Projects: React.FC = () => {
         <div className="projects-grid custom-projects-grid">
           {visibleProjects.map((project, idx) => (
             <div key={idx} className="project-card">
-              <div className="project-image">
-                <div className="project-placeholder">
-                  <span>{project.name}</span>
-                </div>
-              </div>
+              <ImageGallery 
+                images={project.images || []} 
+                alt={project.name}
+              />
               <div className="project-content">
                 <h3 className="project-title">{project.name}</h3>
                 <p className="project-description">{project.description}</p>

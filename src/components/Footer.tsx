@@ -13,7 +13,13 @@ const Footer: React.FC = () => {
       letterSpacing: 0.2,
       userSelect: 'none',
     }}>
-      © {currentYear} Aleksander Cyniak. All rights reserved. <a href="/portfolio/licenses.txt" target="_blank" rel="noopener noreferrer" style={{ color: '#ff8c42', textDecoration: 'underline', marginLeft: 4 }}>Licenses</a>
+             <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '0.5rem' }}>
+         <a href="/portfolio/licenses.txt" target="_blank" rel="noopener noreferrer" style={{ color: '#ff8c42', textDecoration: 'underline', fontSize: '0.85rem', opacity: 0.8 }}>Licenses</a>
+         <a href="https://github.com/dscountergo/portfolio" target="_blank" rel="noopener noreferrer" style={{ color: '#ff8c42', textDecoration: 'underline', fontSize: '0.85rem', opacity: 0.8 }}>Code</a>
+       </div>
+       <div>
+         © {currentYear} Aleksander Cyniak. All rights reserved.
+       </div>
     </footer>
   );
 };

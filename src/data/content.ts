@@ -1,3 +1,15 @@
+type ImageModule = { default: string };
+
+const FFactorySimImages = Object.fromEntries(
+  Object.entries(import.meta.glob('../assets/projects/FFactorySim/*.png', { eager: true }))
+    .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
+) as Record<string, string>;
+
+const LineControlImages = Object.fromEntries(
+  Object.entries(import.meta.glob('../assets/projects/LineAgent-Azure/*.png', { eager: true }))
+    .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
+) as Record<string, string>;
+
 export const content = {
   hero: {
     title: "Software Developer",
@@ -74,24 +86,26 @@ export const content = {
     title: "Projects",
     list: [
       {
-        name: "3D Portfolio Website",
-        description: "THIS PROJECT IS PLACEHOLDER",
-        technologies: ["React", "Three.js", "TypeScript", "Framer Motion"],
-        github: "https://github.com/aleksandercyniak/portfolio-website",
-        demo: "https://aleksandercyniak.github.io/portfolio-website/"
+        name: "FFactorySim",
+        description: "Simple industrial device simulator with OPC UA integration.",
+        technologies: ["C#", "OPC UA", "Simulation"],
+        github: "https://github.com/dscountergo/FFactorySim",
+        demo: "#",
+        images: Object.values(FFactorySimImages)
       },
       {
-        name: "Interactive Data Visualizer",
-        description: "THIS PROJECT IS PLACEHOLDER",
-        technologies: ["React", "WebGL", "D3.js"],
-        github: "#",
-        demo: "#"
+        name: "LineAgent-Azure",
+        description: "Production line management system that connects devices to Azure IoT platform for automated failure handling and stats tracking.",
+        technologies: ["C#", "Azure", "Cloud Services"],
+        github: "https://github.com/dscountergo/LineAgent-Azure",
+        demo: "#",
+        images: Object.values(LineControlImages)
       }
     ]
   },
   contact: {
     title: "Get in Touch",
-    email: "placeholder@example.com",
+    email: "contact.cyniak@gmail.com",
     github: "https://github.com/dscountergo",
     linkedin: "#",
     messageTitle: "Let’s Make It Happen",
