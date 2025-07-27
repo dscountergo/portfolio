@@ -15,6 +15,11 @@ const RoboticMuseumImages = Object.fromEntries(
     .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
 ) as Record<string, string>;
 
+const BrokenStatsImages = Object.fromEntries(
+  Object.entries(import.meta.glob('../assets/projects/BrokenStats/*.png', { eager: true }))
+    .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
+) as Record<string, string>;
+
 export const content = {
   hero: {
     title: "Software Developer",
@@ -113,6 +118,14 @@ export const content = {
         github: "https://github.com/dscountergo/Robotic-Museum",
         demo: "#",
         images: Object.values(RoboticMuseumImages)
+      },
+      {
+        name: "BrokenStats",
+        description: "A real-time companion app for BrokenRanks that collects and displays key gameplay data like mob respawns, battle logs, and chat.",
+        technologies: ["C#", "SQLite", "Pcap.Net", "Co-developer"],
+        github: "https://github.com/Stalk0n/BrokenStats",
+        demo: "#",
+        images: Object.values(BrokenStatsImages)
       }
     ]
   },
