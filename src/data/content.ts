@@ -10,6 +10,11 @@ const LineControlImages = Object.fromEntries(
     .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
 ) as Record<string, string>;
 
+const RoboticMuseumImages = Object.fromEntries(
+  Object.entries(import.meta.glob('../assets/projects/Robotic-Museum/*.png', { eager: true }))
+    .map(([path, module]) => [path.split('/').pop()?.replace('.png', ''), (module as ImageModule).default])
+) as Record<string, string>;
+
 export const content = {
   hero: {
     title: "Software Developer",
@@ -100,6 +105,14 @@ export const content = {
         github: "https://github.com/dscountergo/LineAgent-Azure",
         demo: "#",
         images: Object.values(LineControlImages)
+      },
+      {
+        name: "Robotic-Museum",
+        description: "Explore a 3D post-apocalyptic museum with a robot who guides you through it. Listen as he shares his own reflections on humanity.",
+        technologies: ["Three.js", "Game", "3D"],
+        github: "https://github.com/dscountergo/Robotic-Museum",
+        demo: "#",
+        images: Object.values(RoboticMuseumImages)
       }
     ]
   },
