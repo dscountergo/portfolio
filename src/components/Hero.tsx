@@ -2,7 +2,6 @@ import React from 'react';
 import { content } from '../data/content';
 import TypewriterText from './TypewriterText';
 
-const profilePicJpg = new URL('../assets/profile_pic.jpg', import.meta.url).href;
 const profilePicPng = new URL('../assets/profile_pic.png', import.meta.url).href;
 
 const Hero: React.FC = () => {
