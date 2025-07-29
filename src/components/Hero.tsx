@@ -6,20 +6,13 @@ const profilePicJpg = new URL('../assets/profile_pic.jpg', import.meta.url).href
 const profilePicPng = new URL('../assets/profile_pic.png', import.meta.url).href;
 
 const Hero: React.FC = () => {
-  // Check if file exists (attempt to load image)
   const [imgSrc, setImgSrc] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const img = new window.Image();
-    img.onload = () => setImgSrc(profilePicJpg);
-    img.onerror = () => {
-      // If jpg doesn't exist, try png
-      const imgPng = new window.Image();
-      imgPng.onload = () => setImgSrc(profilePicPng);
-      imgPng.onerror = () => setImgSrc(null);
-      imgPng.src = profilePicPng;
-    };
-    img.src = profilePicJpg;
+    img.onload = () => setImgSrc(profilePicPng);
+    img.onerror = () => setImgSrc(null);
+    img.src = profilePicPng;
   }, []);
 
   return (

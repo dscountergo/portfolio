@@ -818,6 +818,24 @@ body {
   min-height: 3.2em;
 }
 
+@media (max-width: 768px) {
+  .project-description {
+    -webkit-line-clamp: unset;
+    max-height: none;
+    min-height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-description {
+    -webkit-line-clamp: unset;
+    max-height: none;
+    min-height: auto;
+    display: block;
+  }
+}
+
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
